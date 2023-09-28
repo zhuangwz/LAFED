@@ -25,16 +25,11 @@ cd ..
 #python train/train_trade.py --gpu $GPUID --model-num 3 --num-class 100
 
 # TRS training
-python train/train_trs.py --gpu $GPUID --model-num 8 --num-class 10 --lr 0.001 --plus-adv --batch-size 128 --arch "VggNet" --depth 19
+#python train/train_trs.py --gpu $GPUID --model-num 8 --num-class 10 --lr 0.001 --plus-adv --batch-size 128 --arch "VggNet" --depth 19
 
-# my training
-#python train/train_mixup_dverge.py --gpu $GPUID --model-num 8 --distill-eps 0.07 --distill-alpha 0.007 \
-#                         --dverge-coeff 1.0 --distill-steps 10 --train-method "mixup" --batch-size 128 --num-class 10 \
-#                         --soft-label 0.05 \
-#                         --arch "VggNet" --depth 19
-#python train/train_mmat.py --gpu $GPUID --model-num 3 --distill-eps 0.07 --distill-alpha 0.007 \
-#                         --dverge-coeff 1.0 --distill-steps 10 --train-method "none" --adv-method "at" --batch-size 128
-#python train/test.py --gpu $GPUID --model-num 8 --distill-eps 0.07 --distill-alpha 0.007 \
-#                         --dverge-coeff 1.0 --distill-steps 10 --train-method "mixup" --adv-method "none" --batch-size 100
-#python train/train_mixup_trade.py --gpu $GPUID --model-num 8 --distill-eps 0.07 --distill-alpha 0.007 \
-#                         --dverge-coeff 1.0 --distill-steps 10 --train-method "mixup" --batch-size 64 --num-class 10 --plus-adv
+# LAFED training
+python train/train_mixup_dverge.py --gpu $GPUID --model-num 8 --distill-eps 0.07 --distill-alpha 0.007 \
+                        --dverge-coeff 1.0 --distill-steps 10 --train-method "mixup" --batch-size 128 --num-class 10 \
+                        --soft-label 0.05 \
+                        --arch "VggNet" --depth 19
+
